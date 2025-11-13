@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Peirce</title>
+        <link rel="stylesheet" href="style.css" />
+        <script type="module" src="./js/app.js"></script>
+    </head>
+    <body>
+        <!-- Форма для наблюдений -->
+        <form id="observations" action="">
+            <label for="case">Case</label>
+            <textarea name="case" id="case"></textarea>
+            <br />
+            <label for="trigger">Trigger</label>
+            <input type="text" name="trigger" id="trigger" />
+            <br />
+            <label for="thoughts">Thoughts</label>
+            <textarea name="thoughts" id="thoughts"></textarea>
+            <br />
+            <label for="emotions">Emotions</label>
+            <textarea name="emotions" id="emotions"></textarea>
+            <br />
+            <label for="action">Action</label>
+            <input type="text" name="action" id="action" />
+            <br />
+            <label for="consequences">Consequences</label>
+            <textarea name="consequences" id="consequences"></textarea>
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Форма для гипотез -->
+        <form id="hypotheses">
+            <label for="linkedToObsID">ID of linked observation</label>
+            <select name="linkedToObsID" id="linkedToObsID"></select>
+            <br />
+
+            <label for="explanation">Explanation</label>
+            <textarea name="explanation" id="explanation"></textarea>
+            <br />
+
+            <label for="solution">Solution</label>
+            <textarea name="solution" id="solution"></textarea>
+            <br />
+
+            <label for="success-criterion">Criterion of success</label>
+            <textarea name="successCriterion" id="success-criterion"></textarea>
+            <br />
+
+            <label for="environment-setup">Setup of environment</label>
+            <textarea name="environmentSetup" id="environment-setup"></textarea>
+            <br />
+
+            <label for="heuristic">Heuristic</label>
+            <input type="text" name="heuristic" id="heuristic" />
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Форма для заполнения таблицы -->
+        <form id="practice-log">
+            <label for="linkedToHypoID">ID of linked hypothesis</label>
+            <select name="linkedToHypoID" id="linkedToHypoID"></select>
+            <br />
+
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" />
+            <br />
+
+            <label for="situationDetails">Situation details</label>
+            <textarea name="situationDetails" id="situationDetails"></textarea>
+            <br />
+
+            <label for="attemptMade">Attempt was made</label>
+            <input type="checkbox" name="attemptMade" id="attemptMade" />
+            <br />
+
+            <label for="outcome">Outcome</label>
+            <select name="outcome" id="outcome">
+                <option value="">--- Выберите результат ---</option>
+                <option value="success">Success</option>
+                <option value="failure">Failure</option>
+            </select>
+            <br />
+
+            <label for="relatedNotes">Related notes</label>
+            <textarea name="relatedNotes" id="relatedNotes"></textarea>
+            <br />
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <hr />
+
+        <!-- Список с наблюдениями -->
+        <ul id="observations-list"></ul>
+        <!-- Список с гипотезами -->
+        <ul id="hypotheses-list"></ul>
+        <!-- Таблица с Логом Практики -->
+        <table id="practice-log-table">
+            <thead>
+                <tr>
+                    <th>Log ID</th>
+                    <th>Hypo ID</th>
+                    <th>Date</th>
+                    <th>Situation details</th>
+                    <th>Attempt</th>
+                    <th>Outcome</th>
+                    <th>Related notes</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="practice-log__body"></tbody>
+        </table>
+    </body>
+</html>

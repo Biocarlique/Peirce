@@ -1,0 +1,17 @@
+form {
+    display: inline-block;
+}
+
+ul {
+    display: inline-block;
+}
+
+table {
+    display: inline-block;
+    margin-left: 20px;
+    outline: 1px solid black;
+}
+
+#practice-log__body {
+    text-align: center;
+}
