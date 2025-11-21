@@ -33,6 +33,7 @@
 
         <!-- Форма для гипотез -->
         <form id="hypotheses">
+            <!-- Информация о гипотезе -->
             <label for="linkedToObsID">ID of linked observation</label>
             <select name="linkedToObsID" id="linkedToObsID"></select>
             <br />
@@ -55,6 +56,49 @@
 
             <label for="heuristic">Heuristic</label>
             <input type="text" name="heuristic" id="heuristic" />
+            <br />
+
+            <!-- Поля для Критериев Фальсифицируемости -->
+            <hr />
+            <h4>Критерии проверки</h4>
+
+            <label for="minTestDuration">Мин. срок проверки</label>
+            <input
+                type="number"
+                name="minTestDuration"
+                id="minTestDuration"
+                value="7"
+                placeholder="Запишите кол-во дней"
+            />
+            <br />
+
+            <label for="consecutiveFailsThreshold"
+                >Порог. провалов подряд</label
+            >
+            <input
+                type="number"
+                name="consecutiveFailsThreshold"
+                id="consecutiveFailsThreshold"
+                value="2"
+            />
+            <br />
+
+            <label for="weeklySkipsThreshold">Порог. пропусков в неделю</label>
+            <input
+                type="number"
+                name="weeklySkipsThreshold"
+                id="weeklySkipsThreshold"
+                value="2"
+            />
+            <br />
+
+            <label for="minSuccessRate">Мин. процент успеха (%)</label>
+            <input
+                type="number"
+                name="minSuccessRate"
+                id="minSuccessRate"
+                value="80"
+            />
             <br />
             <button type="submit">Submit</button>
         </form>

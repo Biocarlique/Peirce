@@ -55,7 +55,9 @@ const State = {
 
     _cleanLogData(logData) {
         logData.linkedToHypoID = +logData.linkedToHypoID;
+        console.log(logData.attemptMade);
         logData.attemptMade = !!logData.attemptMade;
+        console.log(logData.attemptMade);
         return logData;
     },
 

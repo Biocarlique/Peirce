@@ -12,13 +12,32 @@ class View {
     linkedHypoSelect = document.getElementById("linkedToHypoID");
     practiceLogBody = document.getElementById("practice-log__body");
 
+    // Проверить, отмечен ли чекбокс
+    checkDependency() {
+        const elCheckbox = this.formPracticeLog.attemptMade;
+        const elOutcome = this.formPracticeLog.outcome;
+
+        if (elCheckbox.checked === false) elOutcome.disabled = true;
+        else elOutcome.disabled = false;
+    }
+
+    // Задать сегодняшнюю дату по дефолту
+    setDefaultDate() {
+        const today = new Date();
+        const formattedDate = today.toISOString().split("T")[0];
+        this.formPracticeLog.date.value = formattedDate;
+    }
+
     // Очистить инпуты форм
     clearInputs(formElement) {
         ["input", "textarea", "select"].forEach((tag) =>
-            Array.from(formElement.getElementsByTagName(tag)).forEach(
-                (el) => (el.value = "")
-            )
+            Array.from(formElement.getElementsByTagName(tag)).forEach((el) => {
+                if (el.type === "checkbox") el.checked = false;
+                else el.value = "";
+            })
         );
+        this.setDefaultDate();
+        this.checkDependency();
     }
 
     // Обновить отображение списка наблюдений

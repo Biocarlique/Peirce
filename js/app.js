@@ -64,7 +64,7 @@ const appAddPracticeLog = function (e) {
 
     // 1. Собираем данные с формы
     const data = Object.fromEntries(new FormData(View.formPracticeLog));
-    if (data.linkedToHypoID === "") return;
+    if (data.linkedToHypoID === "" || data.date === "") return;
 
     // 2. Заносим данные в Map с Логом Практики
     State.addLogEntry(data);
@@ -130,8 +130,15 @@ const init = function () {
         appDeletePracticeLog(e);
     });
 
+    View.formPracticeLog.attemptMade.addEventListener(
+        "change",
+        View.checkDependency.bind(View)
+    );
+
     View.updateObservationOptions();
     View.updateHypothesisOptions();
     View.updatePracticeLogTable();
+    View.setDefaultDate();
+    View.checkDependency();
 };
 init();
