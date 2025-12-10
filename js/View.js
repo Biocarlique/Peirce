@@ -8,9 +8,24 @@ class View {
     linkedObsSelect = document.getElementById("linkedToObsID");
     hypothesesList = document.getElementById("hypotheses-list");
 
+    minTestDuration = document.getElementById("minTestDuration");
+    consecutiveFailsThreshold = document.getElementById(
+        "consecutiveFailsThreshold"
+    );
+    weeklySkipsThreshold = document.getElementById("weeklySkipsThreshold");
+    minSuccessRate = document.getElementById("minSuccessRate");
+
     formPracticeLog = document.getElementById("practice-log");
     linkedHypoSelect = document.getElementById("linkedToHypoID");
     practiceLogBody = document.getElementById("practice-log__body");
+
+    // УДАЛИТЬ ПОЗЖЕ
+    conditions() {
+        this.minTestDuration.value = 7;
+        this.consecutiveFailsThreshold.value = 2;
+        this.weeklySkipsThreshold.value = 2;
+        this.minSuccessRate.value = 80;
+    }
 
     // Проверить, отмечен ли чекбокс
     checkDependency() {
@@ -38,6 +53,8 @@ class View {
         );
         this.setDefaultDate();
         this.checkDependency();
+
+        this.conditions();
     }
 
     // Обновить отображение списка наблюдений

@@ -10,59 +10,59 @@
     <body>
         <!-- Форма для наблюдений -->
         <form id="observations" action="">
-            <label for="case">Case</label>
+            <label for="case">case</label>
             <textarea name="case" id="case"></textarea>
             <br />
-            <label for="trigger">Trigger</label>
+            <label for="trigger">trigger</label>
             <input type="text" name="trigger" id="trigger" />
             <br />
-            <label for="thoughts">Thoughts</label>
+            <label for="thoughts">thoughts</label>
             <textarea name="thoughts" id="thoughts"></textarea>
             <br />
-            <label for="emotions">Emotions</label>
+            <label for="emotions">emotions</label>
             <textarea name="emotions" id="emotions"></textarea>
             <br />
-            <label for="action">Action</label>
+            <label for="action">action</label>
             <input type="text" name="action" id="action" />
             <br />
-            <label for="consequences">Consequences</label>
+            <label for="consequences">consequences</label>
             <textarea name="consequences" id="consequences"></textarea>
             <br />
-            <button type="submit">Submit</button>
+            <button type="submit">observations</button>
         </form>
 
         <!-- Форма для гипотез -->
         <form id="hypotheses">
             <!-- Информация о гипотезе -->
-            <label for="linkedToObsID">ID of linked observation</label>
+            <label for="linkedToObsID">linkedToObsID</label>
             <select name="linkedToObsID" id="linkedToObsID"></select>
             <br />
 
-            <label for="explanation">Explanation</label>
+            <label for="explanation">explanation</label>
             <textarea name="explanation" id="explanation"></textarea>
             <br />
 
-            <label for="solution">Solution</label>
+            <label for="solution">solution</label>
             <textarea name="solution" id="solution"></textarea>
             <br />
 
-            <label for="success-criterion">Criterion of success</label>
+            <label for="success-criterion">successCriterion</label>
             <textarea name="successCriterion" id="success-criterion"></textarea>
             <br />
 
-            <label for="environment-setup">Setup of environment</label>
+            <label for="environment-setup">environmentSetup</label>
             <textarea name="environmentSetup" id="environment-setup"></textarea>
             <br />
 
-            <label for="heuristic">Heuristic</label>
+            <label for="heuristic">heuristic</label>
             <input type="text" name="heuristic" id="heuristic" />
             <br />
 
             <!-- Поля для Критериев Фальсифицируемости -->
             <hr />
-            <h4>Критерии проверки</h4>
+            <h4>Conditions</h4>
 
-            <label for="minTestDuration">Мин. срок проверки</label>
+            <label for="minTestDuration">minTestDuration</label>
             <input
                 type="number"
                 name="minTestDuration"
@@ -73,7 +73,7 @@
             <br />
 
             <label for="consecutiveFailsThreshold"
-                >Порог. провалов подряд</label
+                >consecutiveFailsThreshold</label
             >
             <input
                 type="number"
@@ -83,7 +83,7 @@
             />
             <br />
 
-            <label for="weeklySkipsThreshold">Порог. пропусков в неделю</label>
+            <label for="weeklySkipsThreshold">weeklySkipsThreshold</label>
             <input
                 type="number"
                 name="weeklySkipsThreshold"
@@ -92,7 +92,7 @@
             />
             <br />
 
-            <label for="minSuccessRate">Мин. процент успеха (%)</label>
+            <label for="minSuccessRate">minSuccessRate (%)</label>
             <input
                 type="number"
                 name="minSuccessRate"
@@ -100,12 +100,12 @@
                 value="80"
             />
             <br />
-            <button type="submit">Submit</button>
+            <button type="submit">hypotheses</button>
         </form>
 
         <!-- Форма для заполнения таблицы -->
         <form id="practice-log">
-            <label for="linkedToHypoID">ID of linked hypothesis</label>
+            <label for="linkedToHypoID">linkedToHypoID</label>
             <select name="linkedToHypoID" id="linkedToHypoID"></select>
             <br />
 
@@ -113,27 +113,27 @@
             <input type="date" name="date" id="date" />
             <br />
 
-            <label for="situationDetails">Situation details</label>
+            <label for="situationDetails">situationDetails</label>
             <textarea name="situationDetails" id="situationDetails"></textarea>
             <br />
 
-            <label for="attemptMade">Attempt was made</label>
+            <label for="attemptMade">attemptMade</label>
             <input type="checkbox" name="attemptMade" id="attemptMade" />
             <br />
 
-            <label for="outcome">Outcome</label>
+            <label for="outcome">outcome</label>
             <select name="outcome" id="outcome">
                 <option value="">--- Выберите результат ---</option>
-                <option value="success">Success</option>
-                <option value="failure">Failure</option>
+                <option value="success">success</option>
+                <option value="failure">failure</option>
             </select>
             <br />
 
-            <label for="relatedNotes">Related notes</label>
+            <label for="relatedNotes">relatedNotes</label>
             <textarea name="relatedNotes" id="relatedNotes"></textarea>
             <br />
 
-            <button type="submit">Submit</button>
+            <button type="submit">practice-log</button>
         </form>
 
         <hr />

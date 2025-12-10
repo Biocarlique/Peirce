@@ -65,6 +65,7 @@ const appAddPracticeLog = function (e) {
     // 1. Собираем данные с формы
     const data = Object.fromEntries(new FormData(View.formPracticeLog));
     if (data.linkedToHypoID === "" || data.date === "") return;
+    if (data.attemptMade && !data.outcome) return;
 
     // 2. Заносим данные в Map с Логом Практики
     State.addLogEntry(data);

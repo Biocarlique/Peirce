@@ -43,9 +43,28 @@ const State = {
         hyposToDelete.forEach((key) => this.hypotheses.delete(key));
     },
 
-    addHypothesis(hypothesisData) {
+    _cleanHypoData(hypoData) {
+        const newHypoData = {
+            linkedToObsID: hypoData.linkedToObsID,
+            explanation: hypoData.explanation,
+            solution: hypoData.solution,
+            successCriterion: hypoData.successCriterion,
+            environmentSetup: hypoData.environmentSetup,
+            heuristic: hypoData.heuristic,
+            conditions: {
+                minTestDuration: hypoData.minTestDuration,
+                consecutiveFailsThreshold: hypoData.consecutiveFailsThreshold,
+                weeklySkipsThreshold: hypoData.weeklySkipsThreshold,
+                minSuccessRate: hypoData.minSuccessRate,
+            },
+        };
+        return newHypoData;
+    },
+
+    addHypothesis(crudeHypoData) {
+        const hypoData = this._cleanHypoData(crudeHypoData);
         const newHypoId = this.hypoIdCreator();
-        this.hypotheses.set(newHypoId, hypothesisData);
+        this.hypotheses.set(newHypoId, hypoData);
         return newHypoId;
     },
 
@@ -58,6 +77,7 @@ const State = {
         console.log(logData.attemptMade);
         logData.attemptMade = !!logData.attemptMade;
         console.log(logData.attemptMade);
+        if (!logData.attemptMade) logData.outcome = null;
         return logData;
     },
 
@@ -77,14 +97,6 @@ const State = {
         this.practiceLog.forEach((log) => {
             if (log.linkedToHypoID === id) relevantLogs.push(log);
         });
-
-        let consecutiveFailures = 0;
-        const maxFailures = 2;
-        for (let i = 0; i < relevantLogs.length; i++) {
-            const log = relevantLogs[i];
-            if (!log.attemptMade) continue;
-            // if (log.outcome)
-        }
     },
 };
 
